@@ -6,6 +6,30 @@
 
 The repository is structured as a conventional Rust project. A dedicated `circuit` directory has been added, housing the Noir project files.
 
+## Setting up the circuit
+
+You can check how to install `nargo` [here](https://noir-lang.org/getting_started/nargo_installation). You can start with a clean Noir project.
+
+```bash
+rm -rf circuit
+nargo new circuit
+```
+
+After you finished working on your circuit, make sure to run:
+
+```bash
+nargo check
+nargo compile
+```
+
+You can now proceed to fill in your public and secret arguments in the `Prover.toml` file. This file is ignored by default. Then run:
+
+```bash
+nargo prove
+```
+
+This generates the proof that we'll submit.
+
 ## Local Testing Environment
 
 While the primary development environment for this project is a local network utilizing `anvil` or a `hardhat` node, adaptions can be made for testnet deployment with some adjustments.
@@ -24,7 +48,7 @@ Schema Registry: 0x5fbdb2315678afecb367f032d93f642f64180aa3
 Schema ID: [232, 130, 60, 213, 42, 217, 24, 113, 178, 74, 194, 39, 104, 70, 212, 111, 139, 30, 76, 5, 150, 91, 62, 157, 172, 70, 157, 108, 122, 94, 15, 169]
 ```
 
-> Make sure to update your `main.rs` file with these values.
+**_Make sure to update your `main.rs` file with these values._**
 
 Executing the above will also create the `zkAttestation` attestation schema. This schema not only defines an interface for our attestations but also assigns a unique identifier to the project attestations. The schema is designed as:
 
