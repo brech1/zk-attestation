@@ -1,6 +1,6 @@
-# zkAttestations
+# zkAttestation
 
-**zkAttestations** provides a demonstration of how zero-knowledge proofs can be submitted and verified for Noir projects through attestations. This repository showcases a command-line interface (CLI) executable that facilitates various operations outlined below.
+**zkAttestation** provides a demonstration of how zero-knowledge proofs can be submitted and verified for Noir projects through attestations. This repository showcases a command-line interface (CLI) executable that facilitates various operations outlined below.
 
 ## Directory Structure
 
@@ -15,6 +15,16 @@ The `eas` crate allows for interaction with the Ethereum Attestation Service con
 ```bash
 cargo run -- deploy
 ```
+
+After running this we would get an output like this one:
+
+```console
+EAS Contract: 0xe7f1725e7734ce288f8367e1bb143e90bb3f0512
+Schema Registry: 0x5fbdb2315678afecb367f032d93f642f64180aa3
+Schema ID: [232, 130, 60, 213, 42, 217, 24, 113, 178, 74, 194, 39, 104, 70, 212, 111, 139, 30, 76, 5, 150, 91, 62, 157, 172, 70, 157, 108, 122, 94, 15, 169]
+```
+
+> Make sure to update your `main.rs` file with these values.
 
 Executing the above will also create the `zkAttestation` attestation schema. This schema not only defines an interface for our attestations but also assigns a unique identifier to the project attestations. The schema is designed as:
 
@@ -37,6 +47,8 @@ The submitted attestation will encapsulate:
 - `circuit_id`: `[u8;32]` - Represents the SHA2-256 hash derived from the `circuit.json` output file.
 - `pub_param_bytes`: `[u8]` - Byte-encoded version of the `Verifier.toml` file, comprising the public verification parameters.
 - `proof_bytes`: `[u8]` - Contains the generated proof.
+
+**Note:** I included a separator between the public parameters and the proof to decode the byte array, since both are of arbitrary length. There may be a better way to decode this parameters.
 
 ## Proof Verification Process
 

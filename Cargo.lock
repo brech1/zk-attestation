@@ -765,7 +765,7 @@ checksum = "56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b"
 [[package]]
 name = "eas"
 version = "0.1.0"
-source = "git+https://github.com/brech1/eas-rs/?branch=fix/deploy#b2fa76d7a7887f19cb6dd469b391b289398f5dc2"
+source = "git+https://github.com/brech1/eas-rs/#63a9e4919540ccf8a14f3f5edbbf7642c54199f0"
 dependencies = [
  "alloy-sol-types",
  "eas-contracts",
@@ -777,7 +777,7 @@ dependencies = [
 [[package]]
 name = "eas-contracts"
 version = "0.1.0"
-source = "git+https://github.com/brech1/eas-rs/?branch=fix/deploy#b2fa76d7a7887f19cb6dd469b391b289398f5dc2"
+source = "git+https://github.com/brech1/eas-rs/#63a9e4919540ccf8a14f3f5edbbf7642c54199f0"
 dependencies = [
  "ethers",
 ]

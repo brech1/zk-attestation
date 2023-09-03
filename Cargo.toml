@@ -10,6 +10,6 @@ ethers = "2.0.9"
 tokio = "1.32.0"
 
 # Path dependencies
-eas = { git = "https://github.com/brech1/eas-rs/", branch = "fix/deploy"}
+eas = { git = "https://github.com/brech1/eas-rs/"}
 sha2 = "0.10.7"
 walkdir = "2.3.3"
