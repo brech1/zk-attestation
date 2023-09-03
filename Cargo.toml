@@ -1,0 +1,15 @@
+[package]
+name = "zk-attestation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4.2", features = ["derive"] }
+dotenv = "0.15.0"
+ethers = "2.0.9"
+tokio = "1.32.0"
+
+# Path dependencies
+eas = { git = "https://github.com/brech1/eas-rs/", branch = "fix/deploy"}
+sha2 = "0.10.7"
+walkdir = "2.3.3"
